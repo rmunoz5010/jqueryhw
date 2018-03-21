@@ -47,45 +47,22 @@ var crystal = {
     // Change the HTML to reflect all of these changes
     $("#your-score").text(currentScore);
     $("#target-score").text(targetScore);
-  
-  
-    // Testing Console
-    console.log("-----------------------------------");
-    console.log("Target Score: " + targetScore);
-    console.log("Blue: " + crystal.blue.value + " | Green: " + crystal.green.value + " | Red: " + crystal.red.value +
-      " | Yellow: " + crystal.yellow.value);
-    console.log("-----------------------------------");
   };
-  
-  // Check if User Won or Lost and Reset the Game
+
   var checkWin = function() {
-  
-    // Check if currentScore is larger than targetScore
     if (currentScore > targetScore) {
       alert("Sorry. You lost!");
       console.log("You Lost");
-  
-      // Add to Loss Counter
       lossCount++;
-  
-      // Change Loss Count HTML
       $("#loss-count").text(lossCount);
-  
-      // Restart the game
       startGame();
     }
   
     else if (currentScore === targetScore) {
       alert("Congratulations! You Won!");
       console.log("You Won!");
-  
-      // Add to the Win Counter
       winCount++;
-  
-      // Change Win Count HTML
       $("#win-count").text(winCount);
-  
-      // Restart the game
       startGame();
     }
   
